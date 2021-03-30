@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/iName"
+        android:icon="@drawable/ic_name"
+        android:title="Nombre"/>
+    <item
+        android:id="@+id/iCapital"
+        android:icon="@drawable/ic_name"
+        android:title="Capital"/>
+    <item
+        android:id="@+id/iRegion"
+        android:icon="@drawable/ic_name"
+        android:title="Region"/>
+    <item
+        android:id="@+id/iPopulation"
+        android:icon="@drawable/ic_name"
+        android:title="Poblacion"/>
+    <item
+        android:id="@+id/iFlag"
+        android:icon="@drawable/ic_name"
+        android:title="Bandera"/>
+
+</menu>
