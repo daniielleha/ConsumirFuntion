@@ -33,10 +33,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //binding the data;
+
         holder.nameCountry.setText(names.get(position).getNombre());
         holder.capiCountry.setText(names.get(position).getCapi());
-        Picasso.get().load(names.get(position).getImage()).into(holder.flag);
+        holder.regionCountry.setText(names.get(position).getRegion());
+        holder.subCountry.setText(names.get(position).getSub());
+        holder.pobCountry.setText(names.get(position).getPob());
+
+        try {
+             Picasso.get().load(names.get(position).getImage()).into(holder.flag);
+        }catch (Exception exception){
+
+        };
+
     }
 
     @Override
@@ -46,12 +55,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nameCountry,capiCountry;
+        TextView nameCountry,capiCountry, regionCountry, subCountry, pobCountry;
         ImageView flag;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameCountry=itemView.findViewById(R.id.paisName);
             capiCountry=itemView.findViewById(R.id.paisCapi);
+            regionCountry=itemView.findViewById(R.id.paisRegi);
+            subCountry=itemView.findViewById(R.id.paisSub);
+            pobCountry=itemView.findViewById(R.id.paisPob);
             flag=itemView.findViewById(R.id.flagImage);
 
         }

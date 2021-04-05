@@ -34,6 +34,7 @@ import java.util.List;
       List<Name> names;
       private static String JSON_URL = "https://restcountries.eu/rest/v2/all";
       Adapter adapter;
+      private static String TAG = MainActivity.class.getSimpleName();
 
       @Override
       protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +58,12 @@ import java.util.List;
                           Name name = new Name();
                           name.setNombre(nameObject.getString("name").toString());
                           name.setCapi(nameObject.getString("capital".toString()));
-                          name.setImage(nameObject.getString("flag"));
-                          //song.setSongURL(songObject.getString("url"));
+                          name.setRegion(nameObject.getString("region".toString()));
+                          name.setSub(nameObject.getString("subregion".toString()));
+                          name.setPob(nameObject.getString("population".toString()));
+                          name.setImage(nameObject.getString("flag".toString()));
+                          Log.d(TAG, "onResponse: " + name);
+
                           names.add(name);
 
                       } catch (JSONException e) {
